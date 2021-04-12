@@ -95,9 +95,9 @@ end
 
 function love.wheelmoved(x, y)
   if y > 0 then
-    sc = sc + 0.1
-  elseif y < 0 and sc > 0.2 then
-    sc = sc - 0.1
+    sc = sc + 0.02
+  elseif y < 0 and sc > 0.02 then
+    sc = sc - 0.02
   end
 end
 
