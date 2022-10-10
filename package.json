@@ -1,0 +1,23 @@
+{
+  "name": "errare-humanum-est",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server",
+    "watch": "npx tailwindcss -i ./input.css -o ./index.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielss27/errare-humanum-est.git"
+  },
+  "author": "",
+  "license": "GPL-3",
+  "bugs": {
+    "url": "https://github.com/gabrielss27/errare-humanum-est/issues"
+  },
+  "homepage": "https://gabrielss27.github.io/errare-humanum-est",
+  "devDependencies": {
+    "tailwindcss": "^3.1.8"
+  }
+}
