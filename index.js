@@ -4,7 +4,6 @@ const rotation = wheels.map(_ => 0)
 let scale = 1
 const origin = { x: 0, y: 0 }
 let grabbed = null
-let mode = true
 
 const transform = (i) => {
     const t = `scale(${scale})`
@@ -12,11 +11,11 @@ const transform = (i) => {
 }
 
 const init = () => {
-    const scroll = document.getElementById('board-scroll')
+    // const scroll = document.getElementById('board-scroll')
     const bg = document.getElementById('wheel-bg')
     origin.x = bg.clientWidth / 2
     origin.y = bg.clientHeight / 2
-    scroll.style.display = ''
+    // scroll.style.display = ''
     wheels.forEach(wheelID => {
         const wheel = document.getElementById(wheelID)
         const left = (bg.clientWidth - wheel.clientWidth) / 2
@@ -24,11 +23,12 @@ const init = () => {
         wheel.style.left = `${left}px`
         wheel.style.top = `${top}px`
     })
-    const left = (bg.clientWidth - scroll.clientWidth) / 2
-    const top = (bg.clientHeight - scroll.clientHeight) / 2
-    scroll.scrollTo(left, top)
-    scroll.style.display = 'block'
-    scroll.style.opacity = '1'
+    
+    const left = (bg.clientWidth - window.outerWidth) / 2
+    const top = (bg.clientHeight - window.outerHeight) / 2
+    window.scrollTo(left, top)
+    // scroll.style.display = 'block'
+    // scroll.style.opacity = '1'
 }
 
 const grab = (i) => {
@@ -59,4 +59,22 @@ const swapMode = () => {
     const btn = document.getElementById('mode-btn')
     mode = !mode
     btn.innerHTML = mode ? 'M' : 'R'
+}
+
+let info = false
+const toggleInfo = () => {
+    const infoDiv = document.getElementById('info-div')
+    const infoTxt = document.getElementById('info-text')
+    info = !info
+    if (info) {
+        infoDiv.style.width = '25rem'
+        infoTxt.style.width = '15rem'
+        infoTxt.classList.remove('p-0')
+        infoTxt.classList.add('p-1')
+    } else {
+        infoDiv.style.width = '4rem'
+        infoTxt.style.width = '0rem'
+        infoTxt.classList.remove('p-1')
+        infoTxt.classList.add('p-0')
+    }
 }

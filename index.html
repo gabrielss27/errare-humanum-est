@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="./index.css">
     <script type="text/javascript" src="./index.js"></script>
 </head>
-<body onload="init()" id="board-scroll" class="relative bg-black opacity-0">
+<body onload="init()" id="board-scroll" class="relative bg-black">
     <!-- <div id="board-scroll" class="relative w-full h-full overflow-scroll opacity-0"> -->
         <img draggable="false" id="wheel-bg" class="absolute" src="img/bg.jpg">
         <img draggable="false" id="wheel-0"  class="rounded-full absolute" src="img/wheel0.png"
@@ -21,8 +21,12 @@
         <button onclick="updateScale(0.1)">+</button>
         <button onclick="updateScale(-0.1)">-</button>
     </div> -->
-    <!-- <div class="rounded-xl overflow-clip fixed right-2 bottom-2 w-16 h-16 flex flex-col">
-        <button id="mode-btn" onclick="swapMode()">M</button>
-    </div> -->
+    <div id="info-div" class="rounded-xl overflow-clip fixed left-2 bottom-2 w-16 h-16 flex flex-row bg-gray-900
+        items-center transition-size">
+        <button id="info-btn" class="info hover:bg-gray-800 active:bg-gray-500 h-full w-16 text-3xl" onclick="toggleInfo()">?</button>
+        <p id="info-text" class="info p-0 align-baseline flex-1 text-xs w-0 transition-size">
+            Use o zoom e o scroll do navegador para explorar as imagens.
+            Clique e arraste os círculos para rotacioná-los.</p>
+    </div>
 </body>
 </html>

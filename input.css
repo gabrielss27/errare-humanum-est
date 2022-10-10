@@ -17,8 +17,13 @@ img {
   transition: transform 200ms linear; */
 }
 
-button {
-  @apply flex-1 font-bold text-white text-xl bg-gray-900
-    hover:bg-gray-800
-    active:bg-gray-500;
+.info {
+  @apply font-bold text-white bg-gray-900;
+}
+
+.transition-size {
+  -webkit-transition: width 200ms linear, height 200ms linear;
+  -moz-transition: width 200ms linear, height 200ms linear;
+  -ms-transition: width 200ms linear, height 200ms linear;
+  transition: width 200ms linear, height 200ms linear;
 }
